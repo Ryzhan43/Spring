@@ -1,4 +1,4 @@
-package com.mryzhnan.bean_annotation;
+package org.mryzhan.bean_annotation;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

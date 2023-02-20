@@ -1,4 +1,4 @@
-package com.mryzhnan.bean_annotation;
+package org.mryzhan.bean_annotation;
 
 public class FullTimeMentor {
     public void createAccount(){
