@@ -13,6 +13,8 @@
         <option value="$PROJECT_DIR$/Spring-03-Core-Wire/pom.xml" />
         <option value="$PROJECT_DIR$/Spring-04-Abstraction/pom.xml" />
         <option value="$PROJECT_DIR$/Spring-06-SpringBoot-Demo/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-07-Boot-MVC-Controller/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-08-Sring-MVC-Model/pom.xml" />
       </list>
     </option>
   </component>
