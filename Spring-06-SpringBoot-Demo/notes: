@@ -1,0 +1,71 @@
+Spring project Structure:
+
+src/main/java : Contains application source code
+src/main/resources : Contains non-java resources
+src/test/java : Contains test code
+
+mvnw and mvnw.cmd : these are maven wrapper scripts. You can use these scripts to
+build your project, even if you dont have maven installed on your machine.
+
+pom.xml : This is the Maven build specification.
+
+SchoolApplication.java : This is a spring boot main class that
+bootstraps the project.
+
+application.properties : This file initially empty but offers a place
+where you can specify configuration properties.
+
+static : Contains any static content(images, css, js, etc)
+
+templates : Contains templates files that will bee used to generates data
+to the browser(Thymeleaf).
+
+Build Specifications:
+<parent> : This specifies that your project has spring-boot-starter-parent as its parent POM.
+This parent POM provides dependency managment for several libraries commonly used in Spring projects.
+For those libraries covered by the parent POM, you wont have to specify a version, because it is inherited
+from the parents.
+
+
+SchoolApplicationTest : This is a simple test class that ensure that
+the Spring application content loads successfully. You will add more
+test to the mix as you develop the application
+
+All dependencies have the work starter in their artifact ID.
+
+Your build file will be significatly smaller and easir to manage becuase you wont need to declare a dependency
+on every library you might need.
+
+You are able to think of you dependencies in terms of capabilities they provide, rather than their libary
+names(web starter dependency).
+
+You are freed from the burden of worrying about library versions. You only need to worry about which version of Spring
+Boot you are using.
+
+Spring Boot Plugin :
+
+-It provides a Maven goal that enables you to run the application using maven.
+-It ensures that all dependency libraries are included within the executable JAR file
+
+----------------------
+
+Bootstrapping application:
+
+Becasuse you will be running the application from ecxcutable JAR, it is important to to have a min class
+that will be executed that JAR file is run.
+
+@SpringBootApplication : is a composite annotation that combine the following annotations:
+
+@SpringBootConfiguration : Designated this class as a configuration class. You can add Java based Spring
+framework configuration to this class if you need to. This annotation is a spetialized form of
+@Configuration annotation.
+
+@EnableAutoConfiguration : Enables Spring Boot automatic configuration. It tells Spring Boot to automatically configure
+any components that it think you will need.
+
+@ComponentScan : Enables the componanent  scanniing. This lets you declare other classes with annotation like
+@Component to have Spring automatically discovered and register them as components in the Spring application context.
+
+main() method : calls a static run method on SpringApplication class , ehich performs the actual bootstrapping of the
+application, creating the Spring application context. The 2 parameters passed to run()
+method are a configuration class, and the command line arguments.
