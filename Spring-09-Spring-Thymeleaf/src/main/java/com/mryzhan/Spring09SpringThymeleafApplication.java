@@ -1,4 +1,4 @@
-package com.mryzhan.spring09springthymeleaf;
+package com.mryzhan;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
