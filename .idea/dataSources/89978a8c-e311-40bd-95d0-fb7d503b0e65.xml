@@ -3,7 +3,7 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.45">
     <root id="1">
       <DateStyle>ymd</DateStyle>
-      <IntrospectionStateNumber>808</IntrospectionStateNumber>
+      <IntrospectionStateNumber>941</IntrospectionStateNumber>
       <ServerVersion>15.2</ServerVersion>
       <StartupTime>1680914647</StartupTime>
       <TimeZones>true ACDT
@@ -802,7 +802,7 @@ false Zulu
 13183||10|C|G
 13183||-9223372036854775808|U|G
 13183||10|U|G</Grants>
-      <IntrospectionStateNumber>808</IntrospectionStateNumber>
+      <IntrospectionStateNumber>941</IntrospectionStateNumber>
       <ObjectId>5</ObjectId>
       <OwnerName>postgres</OwnerName>
     </database>
@@ -4229,92 +4229,155 @@ false Zulu
     <schema id="262" parent="2" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>808</IntrospectionStateNumber>
+      <IntrospectionStateNumber>941</IntrospectionStateNumber>
       <ObjectId>2200</ObjectId>
       <StateNumber>518</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
     </schema>
-    <table id="263" parent="262" name="employee">
-      <ObjectId>16497</ObjectId>
-      <StateNumber>805</StateNumber>
+    <sequence id="263" parent="262" name="student_id_seq">
+      <DasType>integer|0s</DasType>
+      <ObjectId>16730</ObjectId>
+      <StateNumber>911</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <sequence id="264" parent="262" name="students_id_seq">
+      <DasType>integer|0s</DasType>
+      <ObjectId>16801</ObjectId>
+      <StateNumber>940</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <table id="265" parent="262" name="employee">
+      <ObjectId>16796</ObjectId>
+      <StateNumber>939</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="264" parent="262" name="student">
-      <ObjectId>16502</ObjectId>
-      <StateNumber>806</StateNumber>
+    <table id="266" parent="262" name="student">
+      <ObjectId>16731</ObjectId>
+      <StateNumber>911</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <column id="265" parent="263" name="id">
+    <table id="267" parent="262" name="students">
+      <ObjectId>16802</ObjectId>
+      <StateNumber>940</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <column id="268" parent="265" name="id">
       <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>805</StateNumber>
+      <StateNumber>939</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="266" parent="263" name="name">
+    <column id="269" parent="265" name="name">
       <DasType>varchar(255)|0s</DasType>
       <Position>2</Position>
-      <StateNumber>805</StateNumber>
+      <StateNumber>939</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="267" parent="263" name="employee_pkey">
+    <index id="270" parent="265" name="employee_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16500</ObjectId>
+      <ObjectId>16799</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>805</StateNumber>
+      <StateNumber>939</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="268" parent="263" name="employee_pkey">
+    <key id="271" parent="265" name="employee_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16501</ObjectId>
+      <ObjectId>16800</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>805</StateNumber>
-      <UnderlyingIndexId>16500</UnderlyingIndexId>
+      <StateNumber>939</StateNumber>
+      <UnderlyingIndexId>16799</UnderlyingIndexId>
     </key>
-    <column id="269" parent="264" name="id">
+    <column id="272" parent="266" name="id">
       <DasType>integer|0s</DasType>
+      <DefaultExpression>nextval(&apos;student_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>806</StateNumber>
+      <StateNumber>911</StateNumber>
+      <SequenceId>16730</SequenceId>
       <TypeId>23</TypeId>
     </column>
-    <column id="270" parent="264" name="email">
+    <column id="273" parent="266" name="email">
       <DasType>varchar(255)|0s</DasType>
       <Position>2</Position>
-      <StateNumber>806</StateNumber>
+      <StateNumber>911</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="271" parent="264" name="first_name">
+    <column id="274" parent="266" name="first_name">
       <DasType>varchar(255)|0s</DasType>
       <Position>3</Position>
-      <StateNumber>806</StateNumber>
+      <StateNumber>911</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="272" parent="264" name="last_name">
+    <column id="275" parent="266" name="last_name">
       <DasType>varchar(255)|0s</DasType>
       <Position>4</Position>
-      <StateNumber>806</StateNumber>
+      <StateNumber>911</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="273" parent="264" name="student_pkey">
+    <index id="276" parent="266" name="student_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16507</ObjectId>
+      <ObjectId>16737</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>806</StateNumber>
+      <StateNumber>911</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="274" parent="264" name="student_pkey">
+    <key id="277" parent="266" name="student_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16508</ObjectId>
+      <ObjectId>16738</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>806</StateNumber>
-      <UnderlyingIndexId>16507</UnderlyingIndexId>
+      <StateNumber>911</StateNumber>
+      <UnderlyingIndexId>16737</UnderlyingIndexId>
+    </key>
+    <column id="278" parent="267" name="id">
+      <DasType>integer|0s</DasType>
+      <DefaultExpression>nextval(&apos;students_id_seq&apos;::regclass)</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>940</StateNumber>
+      <SequenceId>16801</SequenceId>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="279" parent="267" name="email">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>2</Position>
+      <StateNumber>940</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="280" parent="267" name="first_name">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>3</Position>
+      <StateNumber>940</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="281" parent="267" name="last_name">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>4</Position>
+      <StateNumber>940</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="282" parent="267" name="students_pkey">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>16808</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>940</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="283" parent="267" name="students_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>16809</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>940</StateNumber>
+      <UnderlyingIndexId>16808</UnderlyingIndexId>
     </key>
   </database-model>
 </dataSource>
