@@ -4,9 +4,10 @@ import com.mryzhan.springreviewproject.model.Employee;
 
 public class DBEmployeeRepository implements EmployeePerository{
 
-    Employee emp1;
+
     @Override
     public int getHourlyRate() {
+        Employee emp1 = new Employee("Honda", "Hona", 40);
         return emp1.getHourlyRate();
     }
 }

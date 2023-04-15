@@ -18,7 +18,6 @@ public class Student {
     private String lastName;
     private String email;
 
-
     @Transient
     private String city;
     @Column(columnDefinition = "DATE")

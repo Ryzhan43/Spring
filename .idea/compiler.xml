@@ -11,6 +11,7 @@
         <module name="Spring-08-Sring-MVC-Model" />
         <module name="Spring-09-Spring-Thymeleaf" />
         <module name="Spring-06-SpringBoot-Demo" />
+        <module name="Spring-11-ORM-Mapping-OneToOne" />
         <module name="Spring-02-Core-Wiring" />
         <module name="Spring-10-ORM-TableCreation" />
         <module name="Spring-04-Abstraction" />
@@ -34,6 +35,7 @@
       <module name="Spring-08-Sring-MVC-Model" options="-parameters" />
       <module name="Spring-09-Spring-Thymeleaf" options="-parameters" />
       <module name="Spring-10-ORM-TableCreation" options="-parameters" />
+      <module name="Spring-11-ORM-Mapping-OneToOne" options="-parameters" />
       <module name="Spring-Core-Review" options="-parameters" />
       <module name="spring-review-project" options="-parameters" />
     </option>

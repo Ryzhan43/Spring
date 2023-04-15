@@ -27,6 +27,5 @@ public class DataGenerator implements CommandLineRunner {
         carRepository.save(c2);
         carRepository.save(c3);
 
-
     }
 }
