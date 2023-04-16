@@ -18,6 +18,7 @@
         <module name="Spring-01-Core-IoC" />
         <module name="Spring-03-Core-DI" />
         <module name="spring-review-project" />
+        <module name="Spring-12-ORM-OneToMany-ManyToMany" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -36,6 +37,7 @@
       <module name="Spring-09-Spring-Thymeleaf" options="-parameters" />
       <module name="Spring-10-ORM-TableCreation" options="-parameters" />
       <module name="Spring-11-ORM-Mapping-OneToOne" options="-parameters" />
+      <module name="Spring-12-ORM-OneToMany-ManyToMany" options="-parameters" />
       <module name="Spring-Core-Review" options="-parameters" />
       <module name="spring-review-project" options="-parameters" />
     </option>
