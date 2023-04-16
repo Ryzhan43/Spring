@@ -3,7 +3,7 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.45">
     <root id="1">
       <DateStyle>ymd</DateStyle>
-      <IntrospectionStateNumber>1250</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1314</IntrospectionStateNumber>
       <ServerVersion>15.2</ServerVersion>
       <StartupTime>1681338810</StartupTime>
       <TimeZones>true ACDT
@@ -802,7 +802,7 @@ false Zulu
 13183||10|C|G
 13183||-9223372036854775808|U|G
 13183||10|U|G</Grants>
-      <IntrospectionStateNumber>1250</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1314</IntrospectionStateNumber>
       <ObjectId>5</ObjectId>
       <OwnerName>postgres</OwnerName>
     </database>
@@ -4229,142 +4229,225 @@ false Zulu
     <schema id="262" parent="2" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>1250</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1314</IntrospectionStateNumber>
       <ObjectId>2200</ObjectId>
       <StateNumber>518</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
     </schema>
-    <sequence id="263" parent="262" name="payment_details_id_seq">
-      <DasType>integer|0s</DasType>
-      <ObjectId>25016</ObjectId>
-      <StateNumber>1244</StateNumber>
+    <sequence id="263" parent="262" name="merchant_id_seq">
+      <DasType>bigint|0s</DasType>
+      <ObjectId>25145</ObjectId>
+      <StateNumber>1303</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
-    <sequence id="264" parent="262" name="payments_id_seq">
+    <sequence id="264" parent="262" name="payment_details_id_seq">
       <DasType>integer|0s</DasType>
-      <ObjectId>25023</ObjectId>
-      <StateNumber>1245</StateNumber>
+      <ObjectId>25154</ObjectId>
+      <StateNumber>1304</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
-    <table id="265" parent="262" name="payment_details">
-      <ObjectId>25017</ObjectId>
-      <StateNumber>1246</StateNumber>
+    <sequence id="265" parent="262" name="payments_id_seq">
+      <DasType>integer|0s</DasType>
+      <ObjectId>25161</ObjectId>
+      <StateNumber>1305</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <table id="266" parent="262" name="merchant">
+      <ObjectId>25146</ObjectId>
+      <StateNumber>1306</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="266" parent="262" name="payments">
-      <ObjectId>25024</ObjectId>
-      <StateNumber>1246</StateNumber>
+    <table id="267" parent="262" name="payment_details">
+      <ObjectId>25155</ObjectId>
+      <StateNumber>1307</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <column id="267" parent="265" name="id">
+    <table id="268" parent="262" name="payments">
+      <ObjectId>25162</ObjectId>
+      <StateNumber>1306</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <column id="269" parent="266" name="id">
+      <DasType>bigint|0s</DasType>
+      <DefaultExpression>nextval(&apos;merchant_id_seq&apos;::regclass)</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>1303</StateNumber>
+      <SequenceId>25145</SequenceId>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="270" parent="266" name="payout_delay_count">
+      <DasType>integer|0s</DasType>
+      <Position>2</Position>
+      <StateNumber>1303</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="271" parent="266" name="code">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>3</Position>
+      <StateNumber>1303</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="272" parent="266" name="commission_rate">
+      <DasType>numeric(38,2 digit)|0s</DasType>
+      <Position>4</Position>
+      <StateNumber>1303</StateNumber>
+      <TypeId>1700</TypeId>
+    </column>
+    <column id="273" parent="266" name="name">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>5</Position>
+      <StateNumber>1303</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="274" parent="266" name="transaction_fee">
+      <DasType>numeric(38,2 digit)|0s</DasType>
+      <Position>6</Position>
+      <StateNumber>1303</StateNumber>
+      <TypeId>1700</TypeId>
+    </column>
+    <index id="275" parent="266" name="merchant_pkey">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>25152</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>1303</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="276" parent="266" name="merchant_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>25153</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>1303</StateNumber>
+      <UnderlyingIndexId>25152</UnderlyingIndexId>
+    </key>
+    <column id="277" parent="267" name="id">
       <DasType>integer|0s</DasType>
       <DefaultExpression>nextval(&apos;payment_details_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>1244</StateNumber>
-      <SequenceId>25016</SequenceId>
+      <StateNumber>1304</StateNumber>
+      <SequenceId>25154</SequenceId>
       <TypeId>23</TypeId>
     </column>
-    <column id="268" parent="265" name="commision_amount">
+    <column id="278" parent="267" name="commision_amount">
       <DasType>numeric(38,2 digit)|0s</DasType>
       <Position>2</Position>
-      <StateNumber>1244</StateNumber>
+      <StateNumber>1304</StateNumber>
       <TypeId>1700</TypeId>
     </column>
-    <column id="269" parent="265" name="merchant_payout_amount">
+    <column id="279" parent="267" name="merchant_payout_amount">
       <DasType>numeric(38,2 digit)|0s</DasType>
       <Position>3</Position>
-      <StateNumber>1244</StateNumber>
+      <StateNumber>1304</StateNumber>
       <TypeId>1700</TypeId>
     </column>
-    <column id="270" parent="265" name="payment_status">
+    <column id="280" parent="267" name="payment_status">
       <DasType>smallint|0s</DasType>
       <Position>4</Position>
-      <StateNumber>1244</StateNumber>
+      <StateNumber>1304</StateNumber>
       <TypeId>21</TypeId>
     </column>
-    <column id="271" parent="265" name="payout_date">
+    <column id="281" parent="267" name="payout_date">
       <DasType>date|0s</DasType>
       <Position>5</Position>
-      <StateNumber>1244</StateNumber>
+      <StateNumber>1304</StateNumber>
       <TypeId>1082</TypeId>
     </column>
-    <index id="272" parent="265" name="payment_details_pkey">
+    <index id="282" parent="267" name="payment_details_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>25021</ObjectId>
+      <ObjectId>25159</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>1244</StateNumber>
+      <StateNumber>1304</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="273" parent="265" name="payment_details_pkey">
+    <key id="283" parent="267" name="payment_details_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>25022</ObjectId>
+      <ObjectId>25160</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>1244</StateNumber>
-      <UnderlyingIndexId>25021</UnderlyingIndexId>
+      <StateNumber>1304</StateNumber>
+      <UnderlyingIndexId>25159</UnderlyingIndexId>
     </key>
-    <column id="274" parent="266" name="id">
+    <column id="284" parent="268" name="id">
       <DasType>integer|0s</DasType>
       <DefaultExpression>nextval(&apos;payments_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>1245</StateNumber>
-      <SequenceId>25023</SequenceId>
+      <StateNumber>1305</StateNumber>
+      <SequenceId>25161</SequenceId>
       <TypeId>23</TypeId>
     </column>
-    <column id="275" parent="266" name="amount">
+    <column id="285" parent="268" name="amount">
       <DasType>numeric(38,2 digit)|0s</DasType>
       <Position>2</Position>
-      <StateNumber>1245</StateNumber>
+      <StateNumber>1305</StateNumber>
       <TypeId>1700</TypeId>
     </column>
-    <column id="276" parent="266" name="created_date">
+    <column id="286" parent="268" name="created_date">
       <DasType>date|0s</DasType>
       <Position>3</Position>
-      <StateNumber>1245</StateNumber>
+      <StateNumber>1305</StateNumber>
       <TypeId>1082</TypeId>
     </column>
-    <column id="277" parent="266" name="payment_status">
+    <column id="287" parent="268" name="payment_status">
       <DasType>smallint|0s</DasType>
       <Position>4</Position>
-      <StateNumber>1245</StateNumber>
+      <StateNumber>1305</StateNumber>
       <TypeId>21</TypeId>
     </column>
-    <column id="278" parent="266" name="payment_detail_id">
-      <DasType>integer|0s</DasType>
+    <column id="288" parent="268" name="merchant_id">
+      <DasType>bigint|0s</DasType>
       <Position>5</Position>
-      <StateNumber>1245</StateNumber>
+      <StateNumber>1305</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="289" parent="268" name="payment_detail_id">
+      <DasType>integer|0s</DasType>
+      <Position>6</Position>
+      <StateNumber>1305</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <foreign-key id="279" parent="266" name="fkcflq9yh5yqv1tmalwd2p438n3">
-      <ColNames>payment_detail_id</ColNames>
-      <ObjectId>25030</ObjectId>
+    <foreign-key id="290" parent="268" name="fkni5pbt6657xuvbg0muepiu4h">
+      <ColNames>merchant_id</ColNames>
+      <ObjectId>25168</ObjectId>
       <RefColNames>id</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>1246</StateNumber>
-      <RefTableId>25017</RefTableId>
+      <StateNumber>1306</StateNumber>
+      <RefTableId>25146</RefTableId>
+      <RefTableName>merchant</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <foreign-key id="291" parent="268" name="fkcflq9yh5yqv1tmalwd2p438n3">
+      <ColNames>payment_detail_id</ColNames>
+      <ObjectId>25173</ObjectId>
+      <RefColNames>id</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <StateNumber>1307</StateNumber>
+      <RefTableId>25155</RefTableId>
       <RefTableName>payment_details</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="280" parent="266" name="payments_pkey">
+    <index id="292" parent="268" name="payments_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>25028</ObjectId>
+      <ObjectId>25166</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>1245</StateNumber>
+      <StateNumber>1305</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="281" parent="266" name="payments_pkey">
+    <key id="293" parent="268" name="payments_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>25029</ObjectId>
+      <ObjectId>25167</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>1245</StateNumber>
-      <UnderlyingIndexId>25028</UnderlyingIndexId>
+      <StateNumber>1305</StateNumber>
+      <UnderlyingIndexId>25166</UnderlyingIndexId>
     </key>
   </database-model>
 </dataSource>
