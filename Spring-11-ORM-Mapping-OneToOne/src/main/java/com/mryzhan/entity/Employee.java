@@ -22,7 +22,8 @@ public class Employee extends BaseEntity{
     @Column(columnDefinition = "DATE")
     private LocalDate hireDate;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
+    //@OneToOne(cascade = {CascadeType.PERSIST,CascadeType.REMOVE})
     @JoinColumn(name = "department_id")
     private Department  department;
     private int salary;

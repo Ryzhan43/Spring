@@ -14,8 +14,7 @@ public class Department extends BaseEntity{
     private String department;
     @Column(length = 50)
     private String division;
-    @OneToOne
-    @JoinColumn(name = "employee_id")
+    @OneToOne(mappedBy = "department")
     private Employee employee;
 
     public Department(String department, String division) {
