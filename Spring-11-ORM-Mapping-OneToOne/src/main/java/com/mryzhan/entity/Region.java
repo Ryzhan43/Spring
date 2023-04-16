@@ -1,9 +1,6 @@
 package com.mryzhan.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,12 +8,19 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "regions")
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class Region {
-    @Id
-    private String regionId;
+public class Region extends BaseEntity{
     @Column(length = 50)
     private String region;
 
+    @Column(length = 50)
+    private String country;
+
+    @OneToOne(mappedBy = "region")
+    private Employee employee;
+
+    public Region(String region, String country) {
+        this.region = region;
+        this.country = country;
+    }
 }
