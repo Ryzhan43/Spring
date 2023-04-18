@@ -3,7 +3,7 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.45">
     <root id="1">
       <DateStyle>ymd</DateStyle>
-      <IntrospectionStateNumber>1491</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1526</IntrospectionStateNumber>
       <ServerVersion>15.2</ServerVersion>
       <StartupTime>1681338810</StartupTime>
       <TimeZones>true ACDT
@@ -802,7 +802,7 @@ false Zulu
 13183||10|C|G
 13183||-9223372036854775808|U|G
 13183||10|U|G</Grants>
-      <IntrospectionStateNumber>1491</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1526</IntrospectionStateNumber>
       <ObjectId>5</ObjectId>
       <OwnerName>postgres</OwnerName>
     </database>
@@ -4229,50 +4229,50 @@ false Zulu
     <schema id="262" parent="2" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>1491</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1526</IntrospectionStateNumber>
       <ObjectId>2200</ObjectId>
       <StateNumber>518</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
     </schema>
     <sequence id="263" parent="262" name="cinema_id_seq">
       <DasType>bigint|0s</DasType>
-      <ObjectId>25534</ObjectId>
-      <StateNumber>1485</StateNumber>
+      <ObjectId>25615</ObjectId>
+      <StateNumber>1518</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <sequence id="264" parent="262" name="location_id_seq">
       <DasType>bigint|0s</DasType>
-      <ObjectId>25546</ObjectId>
-      <StateNumber>1487</StateNumber>
+      <ObjectId>25627</ObjectId>
+      <StateNumber>1520</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <sequence id="265" parent="262" name="movie_id_seq">
       <DasType>bigint|0s</DasType>
-      <ObjectId>25555</ObjectId>
-      <StateNumber>1488</StateNumber>
+      <ObjectId>25636</ObjectId>
+      <StateNumber>1521</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <table id="266" parent="262" name="cinema">
-      <ObjectId>25535</ObjectId>
-      <StateNumber>1490</StateNumber>
+      <ObjectId>25616</ObjectId>
+      <StateNumber>1522</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
     <table id="267" parent="262" name="cinema_movies">
-      <ObjectId>25543</ObjectId>
-      <StateNumber>1489</StateNumber>
+      <ObjectId>25624</ObjectId>
+      <StateNumber>1523</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
     <table id="268" parent="262" name="location">
-      <ObjectId>25547</ObjectId>
-      <StateNumber>1487</StateNumber>
+      <ObjectId>25628</ObjectId>
+      <StateNumber>1522</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
     <table id="269" parent="262" name="movie">
-      <ObjectId>25556</ObjectId>
-      <StateNumber>1489</StateNumber>
+      <ObjectId>25637</ObjectId>
+      <StateNumber>1523</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
@@ -4281,211 +4281,243 @@ false Zulu
       <DefaultExpression>nextval(&apos;cinema_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>1485</StateNumber>
-      <SequenceId>25534</SequenceId>
+      <StateNumber>1518</StateNumber>
+      <SequenceId>25615</SequenceId>
       <TypeId>20</TypeId>
     </column>
     <column id="271" parent="266" name="name">
       <DasType>varchar(255)|0s</DasType>
       <Position>2</Position>
-      <StateNumber>1485</StateNumber>
+      <StateNumber>1518</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="272" parent="266" name="sponsored_name">
       <DasType>varchar(255)|0s</DasType>
       <Position>3</Position>
-      <StateNumber>1485</StateNumber>
+      <StateNumber>1518</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="273" parent="266" name="cinema_pkey">
+    <column id="273" parent="266" name="location_id">
+      <DasType>bigint|0s</DasType>
+      <Position>4</Position>
+      <StateNumber>1518</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <foreign-key id="274" parent="266" name="fk8s0buef0qbajq608344o3mmvl">
+      <ColNames>location_id</ColNames>
+      <ObjectId>25645</ObjectId>
+      <RefColNames>id</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <StateNumber>1522</StateNumber>
+      <RefTableId>25628</RefTableId>
+      <RefTableName>location</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <index id="275" parent="266" name="cinema_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>25541</ObjectId>
+      <ObjectId>25622</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>1485</StateNumber>
+      <StateNumber>1518</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="274" parent="266" name="cinema_pkey">
+    <key id="276" parent="266" name="cinema_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>25542</ObjectId>
+      <ObjectId>25623</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>1485</StateNumber>
-      <UnderlyingIndexId>25541</UnderlyingIndexId>
+      <StateNumber>1518</StateNumber>
+      <UnderlyingIndexId>25622</UnderlyingIndexId>
     </key>
-    <column id="275" parent="267" name="cinema_list_id">
+    <column id="277" parent="267" name="cinema_list_id">
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>1486</StateNumber>
+      <StateNumber>1519</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="276" parent="267" name="movies_id">
+    <column id="278" parent="267" name="movies_id">
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>1486</StateNumber>
+      <StateNumber>1519</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <foreign-key id="277" parent="267" name="fknve4fy1kgv0oqledol8dplelu">
+    <foreign-key id="279" parent="267" name="fknve4fy1kgv0oqledol8dplelu">
       <ColNames>cinema_list_id</ColNames>
-      <ObjectId>25569</ObjectId>
+      <ObjectId>25655</ObjectId>
       <RefColNames>id</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>1490</StateNumber>
-      <RefTableId>25535</RefTableId>
+      <StateNumber>1524</StateNumber>
+      <RefTableId>25616</RefTableId>
       <RefTableName>cinema</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="278" parent="267" name="fkqkhbyxxv04797921qj1p24kfi">
+    <foreign-key id="280" parent="267" name="fkqkhbyxxv04797921qj1p24kfi">
       <ColNames>movies_id</ColNames>
-      <ObjectId>25564</ObjectId>
+      <ObjectId>25650</ObjectId>
       <RefColNames>id</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>1489</StateNumber>
-      <RefTableId>25556</RefTableId>
+      <StateNumber>1523</StateNumber>
+      <RefTableId>25637</RefTableId>
       <RefTableName>movie</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <column id="279" parent="268" name="id">
+    <column id="281" parent="268" name="id">
       <DasType>bigint|0s</DasType>
       <DefaultExpression>nextval(&apos;location_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>1487</StateNumber>
-      <SequenceId>25546</SequenceId>
+      <StateNumber>1520</StateNumber>
+      <SequenceId>25627</SequenceId>
       <TypeId>20</TypeId>
     </column>
-    <column id="280" parent="268" name="address">
+    <column id="282" parent="268" name="address">
       <DasType>varchar(255)|0s</DasType>
       <Position>2</Position>
-      <StateNumber>1487</StateNumber>
+      <StateNumber>1520</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="281" parent="268" name="city">
+    <column id="283" parent="268" name="city">
       <DasType>varchar(255)|0s</DasType>
       <Position>3</Position>
-      <StateNumber>1487</StateNumber>
+      <StateNumber>1520</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="282" parent="268" name="country">
+    <column id="284" parent="268" name="country">
       <DasType>varchar(255)|0s</DasType>
       <Position>4</Position>
-      <StateNumber>1487</StateNumber>
+      <StateNumber>1520</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="283" parent="268" name="latitude">
+    <column id="285" parent="268" name="latitude">
       <DasType>bigint|0s</DasType>
       <Position>5</Position>
-      <StateNumber>1487</StateNumber>
+      <StateNumber>1520</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="284" parent="268" name="longitude">
+    <column id="286" parent="268" name="longitude">
       <DasType>bigint|0s</DasType>
       <Position>6</Position>
-      <StateNumber>1487</StateNumber>
+      <StateNumber>1520</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="285" parent="268" name="name">
+    <column id="287" parent="268" name="name">
       <DasType>varchar(255)|0s</DasType>
       <Position>7</Position>
-      <StateNumber>1487</StateNumber>
+      <StateNumber>1520</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="286" parent="268" name="postal_code">
+    <column id="288" parent="268" name="postal_code">
       <DasType>varchar(255)|0s</DasType>
       <Position>8</Position>
-      <StateNumber>1487</StateNumber>
+      <StateNumber>1520</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="287" parent="268" name="state">
+    <column id="289" parent="268" name="state">
       <DasType>varchar(255)|0s</DasType>
       <Position>9</Position>
-      <StateNumber>1487</StateNumber>
+      <StateNumber>1520</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="288" parent="268" name="location_pkey">
+    <column id="290" parent="268" name="cinema_id">
+      <DasType>bigint|0s</DasType>
+      <Position>10</Position>
+      <StateNumber>1520</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <foreign-key id="291" parent="268" name="fk81pswndak2kf06vlq49crf5ae">
+      <ColNames>cinema_id</ColNames>
+      <ObjectId>25660</ObjectId>
+      <RefColNames>id</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <StateNumber>1525</StateNumber>
+      <RefTableId>25616</RefTableId>
+      <RefTableName>cinema</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <index id="292" parent="268" name="location_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>25553</ObjectId>
+      <ObjectId>25634</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>1487</StateNumber>
+      <StateNumber>1520</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="289" parent="268" name="location_pkey">
+    <key id="293" parent="268" name="location_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>25554</ObjectId>
+      <ObjectId>25635</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>1487</StateNumber>
-      <UnderlyingIndexId>25553</UnderlyingIndexId>
+      <StateNumber>1520</StateNumber>
+      <UnderlyingIndexId>25634</UnderlyingIndexId>
     </key>
-    <column id="290" parent="269" name="id">
+    <column id="294" parent="269" name="id">
       <DasType>bigint|0s</DasType>
       <DefaultExpression>nextval(&apos;movie_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>1488</StateNumber>
-      <SequenceId>25555</SequenceId>
+      <StateNumber>1521</StateNumber>
+      <SequenceId>25636</SequenceId>
       <TypeId>20</TypeId>
     </column>
-    <column id="291" parent="269" name="duration">
+    <column id="295" parent="269" name="duration">
       <DasType>bigint|0s</DasType>
       <Position>2</Position>
-      <StateNumber>1488</StateNumber>
+      <StateNumber>1521</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="292" parent="269" name="name">
+    <column id="296" parent="269" name="name">
       <DasType>varchar(255)|0s</DasType>
       <Position>3</Position>
-      <StateNumber>1488</StateNumber>
+      <StateNumber>1521</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="293" parent="269" name="price">
+    <column id="297" parent="269" name="price">
       <DasType>bigint|0s</DasType>
       <Position>4</Position>
-      <StateNumber>1488</StateNumber>
+      <StateNumber>1521</StateNumber>
       <TypeId>20</TypeId>
     </column>
-    <column id="294" parent="269" name="release_date">
+    <column id="298" parent="269" name="release_date">
       <DasType>date|0s</DasType>
       <Position>5</Position>
-      <StateNumber>1488</StateNumber>
+      <StateNumber>1521</StateNumber>
       <TypeId>1082</TypeId>
     </column>
-    <column id="295" parent="269" name="state">
+    <column id="299" parent="269" name="state">
       <DasType>varchar(255)|0s</DasType>
       <Position>6</Position>
-      <StateNumber>1488</StateNumber>
+      <StateNumber>1521</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="296" parent="269" name="summary">
+    <column id="300" parent="269" name="summary">
       <DasType>varchar(255)|0s</DasType>
       <Position>7</Position>
-      <StateNumber>1488</StateNumber>
+      <StateNumber>1521</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="297" parent="269" name="type">
+    <column id="301" parent="269" name="type">
       <DasType>varchar(255)|0s</DasType>
       <Position>8</Position>
-      <StateNumber>1488</StateNumber>
+      <StateNumber>1521</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="298" parent="269" name="movie_pkey">
+    <index id="302" parent="269" name="movie_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>25562</ObjectId>
+      <ObjectId>25643</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>1488</StateNumber>
+      <StateNumber>1521</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="299" parent="269" name="movie_pkey">
+    <key id="303" parent="269" name="movie_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>25563</ObjectId>
+      <ObjectId>25644</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>1488</StateNumber>
-      <UnderlyingIndexId>25562</UnderlyingIndexId>
+      <StateNumber>1521</StateNumber>
+      <UnderlyingIndexId>25643</UnderlyingIndexId>
     </key>
   </database-model>
 </dataSource>

@@ -2,6 +2,7 @@ package com.example.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToOne;
 
 import java.util.List;
 
@@ -12,5 +13,8 @@ public class Cinema extends BaseEntity{
 
     @ManyToMany
     private List<Movie> movies;
+
+    @OneToOne
+    private Location location;
 
 }
