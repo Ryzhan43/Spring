@@ -7,18 +7,26 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Spring-00-Introduction" />
-        <module name="Spring-08-Sring-MVC-Model" />
-        <module name="Spring-09-Spring-Thymeleaf" />
-        <module name="Spring-06-SpringBoot-Demo" />
-        <module name="Spring-11-ORM-Mapping-OneToOne" />
         <module name="Spring-02-Core-Wiring" />
-        <module name="Spring-10-ORM-TableCreation" />
         <module name="Spring-04-Abstraction" />
         <module name="Spring-01-Core-IoC" />
         <module name="Spring-03-Core-DI" />
         <module name="spring-review-project" />
+        <module name="Spring-00-Introduction" />
+        <module name="Spring-08-Sring-MVC-Model" />
+        <module name="Cinema-App-Lab" />
+        <module name="Spring-09-Spring-Thymeleaf" />
+        <module name="Spring-06-SpringBoot-Demo" />
+        <module name="Spring-11-ORM-Mapping-OneToOne" />
+        <module name="Spring-10-ORM-TableCreation" />
         <module name="Spring-12-ORM-OneToMany-ManyToMany" />
+      </profile>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.26/8f8cf0372abf564913e9796623aac4c8ea44025a/lombok-1.18.26.jar" />
+        </processorPath>
+        <module name="Lab1-Cinema-App.main" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -30,6 +38,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Cinema-App-Lab" options="-parameters" />
       <module name="Spring-06-SpringBoot-Demo" options="-parameters" />
       <module name="Spring-07-Boot-MVC-Controller" options="-parameters" />
       <module name="Spring-07-Spring-MVC-Controller" options="-parameters" />

@@ -5,6 +5,15 @@
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Lab1-Cinema-App" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Lab1-Cinema-App" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/Spring-06-Boot-Demo" />
         <option name="modules">
           <set>
