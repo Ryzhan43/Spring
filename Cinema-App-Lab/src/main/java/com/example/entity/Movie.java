@@ -25,4 +25,10 @@ public class Movie extends BaseEntity{
     @ManyToMany(mappedBy = "movies")
     private List<Cinema> cinemaList;
 
+    @ManyToMany(mappedBy = "movie")
+    private List<Genre> genreList ;
+
+    @OneToOne(mappedBy = "movie")
+    private Ticket ticket;
+
 }

@@ -16,4 +16,7 @@ public class Ticket extends BaseEntity {
 
     @ManyToOne
     private UserAccount userAccount;
+
+    @OneToOne
+    private Movie movie;
 }
