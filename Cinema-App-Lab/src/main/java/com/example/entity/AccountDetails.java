@@ -1,11 +1,12 @@
 package com.example.entity;
 
+import com.example.enums.Role;
+import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.OneToOne;
 
-import javax.management.relation.Role;
-
+@Entity
 public class AccountDetails extends BaseEntity{
     public String name;
     public String address;
