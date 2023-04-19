@@ -1,9 +1,6 @@
 package com.mryzhan.entity;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 
 import java.util.List;
 
@@ -13,7 +10,8 @@ public class UserAccount extends BaseEntity {
     public String password;
     public String username;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "account_details_id")
     public AccountDetails accountDetails;
 
     @OneToMany(mappedBy = "userAccount")

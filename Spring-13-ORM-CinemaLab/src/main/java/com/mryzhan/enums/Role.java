@@ -1,5 +1,5 @@
 package com.mryzhan.enums;
 
-public enum MovieRole {
+public enum Role {
     USER, ADMIN;
 }

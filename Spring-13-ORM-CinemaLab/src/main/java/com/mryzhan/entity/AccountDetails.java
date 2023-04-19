@@ -1,24 +1,28 @@
 package com.mryzhan.entity;
 
-import com.example.enums.Role;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.OneToOne;
+import com.mryzhan.enums.Role;
+import com.mryzhan.enums.UserRole;
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
+@Data
+@NoArgsConstructor
 public class AccountDetails extends BaseEntity {
+
     public String name;
     public String address;
     public String country;
     public String city;
     public String state;
-    public int age;
+    public Integer age;
     public String postalCode;
-    @Enumerated(EnumType.STRING)
-    public Role role;
 
-    @OneToOne
+    @Enumerated(EnumType.STRING)
+    public UserRole role = UserRole.USER;
+
+    @OneToOne()
     private UserAccount userAccount;
 
 }

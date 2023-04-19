@@ -1,9 +1,6 @@
 package com.mryzhan.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -16,7 +13,7 @@ public class Cinema extends BaseEntity {
     private String name;
     private String sponsored_name;
 
-    @OneToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Location location;
     @ManyToMany
     private List<Movie> movies;
