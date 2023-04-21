@@ -19,6 +19,9 @@ public class DataGeneration implements CommandLineRunner {
         System.out.println("=========================== START ===================");
 
         System.out.println(regionRepository.findByCountry("Canada"));
+        System.out.println(regionRepository.findDistinctByCountry("Canada"));
+        System.out.println(regionRepository.findByCountryContaining("United"));
+        System.out.println(regionRepository.findAllByCountryContainingOrderByRegion("United"));
 
         System.out.println("===========================  END  ===================");
     }
