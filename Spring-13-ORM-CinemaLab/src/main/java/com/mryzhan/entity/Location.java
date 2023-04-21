@@ -17,7 +17,4 @@ public class Location extends BaseEntity {
     private String postalCode;
     private String address;
 
-    @ManyToOne
-    private Cinema cinema;
-
 }

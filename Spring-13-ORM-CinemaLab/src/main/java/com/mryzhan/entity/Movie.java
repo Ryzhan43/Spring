@@ -17,7 +17,7 @@ public class Movie extends BaseEntity{
     private String name;
     @Column(columnDefinition = "DATE")
     private LocalDate releaseDate;
-    private Integer summary;
+    private String summary;
     @Enumerated(EnumType.STRING)
     private MovieType type;
     @Enumerated(EnumType.STRING)
@@ -27,14 +27,12 @@ public class Movie extends BaseEntity{
 
     private Long duration;
 
-    @ManyToMany(mappedBy = "movies")
-    private List<Cinema> cinemaList;
 
     @ManyToMany
+    @JoinTable(name = "movie_genre_rel",
+            joinColumns = @JoinColumn(name="movie_id"),
+            inverseJoinColumns = @JoinColumn(name = "genre_id"))
     private List<Genre> genreList ;
-
-    @OneToOne(mappedBy = "movie")
-    private Ticket ticket;
 
     @OneToMany(mappedBy = "movie")
     private List<MovieCinema> movies;

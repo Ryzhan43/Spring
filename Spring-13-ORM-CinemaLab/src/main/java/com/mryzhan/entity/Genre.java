@@ -16,10 +16,7 @@ public class Genre extends BaseEntity {
 
     private String name;
 
-    @ManyToMany(mappedBy = "movie")
-    @JoinTable(name = "movie_genre_rel",
-            joinColumns = @JoinColumn(name="movie_id"),
-            inverseJoinColumns = @JoinColumn(name = "genre_id"))
+    @ManyToMany(mappedBy = "genreList")
     private List<Movie> movie;
 
 }

@@ -1,6 +1,7 @@
 package com.mryzhan.entity;
 
 import jakarta.persistence.*;
+import jakarta.persistence.criteria.CriteriaBuilder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -13,10 +14,10 @@ import java.time.LocalDateTime;
 
 public class Ticket extends BaseEntity {
 
-    @Column(columnDefinition = "DATESTAMP")
+    @Column(columnDefinition = "TIMESTAMP")
     private LocalDateTime dateTime;
-    private int seatNumber;
-    private char rowNumber;
+    private Integer seatNumber;
+    private Integer rowNumber;
 
     @ManyToOne(fetch = FetchType.LAZY)
     private MovieCinema movieCinema;
@@ -24,6 +25,4 @@ public class Ticket extends BaseEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     private UserAccount userAccount;
 
-    @OneToOne
-    private Movie movie;
 }

@@ -15,8 +15,6 @@ public class Cinema extends BaseEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Location location;
-    @ManyToMany
-    private List<Movie> movies;
     @OneToMany(mappedBy = "cinema")
     private List<MovieCinema> movieCinema;
 }
