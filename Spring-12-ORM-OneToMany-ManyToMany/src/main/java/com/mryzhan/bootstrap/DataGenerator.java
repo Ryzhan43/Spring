@@ -12,7 +12,7 @@ import java.time.LocalDate;
 import java.util.Arrays;
 
 @Component
-public class DataGenerator implements CommandLineRunner {
+public class  DataGenerator implements CommandLineRunner {
 
     private final PaymentRepository paymentRepository;
     private final MerchantRepository merchantRepository;
