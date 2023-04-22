@@ -1,5 +1,6 @@
 package com.example.bootstrap;
 
+import com.example.repository.CourseRepository;
 import com.example.repository.DepartmentRepository;
 import com.example.repository.EmployeeRepository;
 import com.example.repository.RegionRepository;
@@ -12,11 +13,13 @@ public class DataGeneration implements CommandLineRunner {
     private final RegionRepository regionRepository;
     private final DepartmentRepository departmentRepository;
     private final EmployeeRepository employeeRepository;
+    private final CourseRepository courseRepository;
 
-    public DataGeneration(RegionRepository regionRepository, DepartmentRepository departmentRepository, EmployeeRepository employeeRepository) {
+    public DataGeneration(RegionRepository regionRepository, DepartmentRepository departmentRepository, EmployeeRepository employeeRepository, CourseRepository courseRepository) {
         this.regionRepository = regionRepository;
         this.departmentRepository = departmentRepository;
         this.employeeRepository = employeeRepository;
+        this.courseRepository = courseRepository;
     }
 
     @Override
@@ -42,10 +45,17 @@ public class DataGeneration implements CommandLineRunner {
 
         System.out.println("=========================== EMPLOYEE START ===================");
 
-        System.out.println(employeeRepository.findAllByEmail(""));
-        System.out.println(employeeRepository.findByFirstNameAndLastNameOrEmail("Sydney", "Symonds", "jcolmn@pen.io"));
+        System.out.println(employeeRepository.getEmployeeSalary("sdubber7@t-online.de"));
 
         System.out.println("=========================== EMPLOYEE END  ===================");
+
+        System.out.println("=========================== COURSE START ===================");
+
+        courseRepository.findByCategory("Spring").forEach(System.out::println);
+        courseRepository.findByCategory("Spring").forEach(System.out::println);
+        System.out.println(courseRepository.existsByName("JavaScript for all"));
+
+        System.out.println("=========================== COURSE END  ===================");
 
     }
 }

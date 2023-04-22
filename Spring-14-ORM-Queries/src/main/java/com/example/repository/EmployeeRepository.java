@@ -3,10 +3,12 @@ package com.example.repository;
 import com.example.entity.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;
 import java.util.List;
 
+@Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 
     List<Employee> findAllByEmail(String email);
@@ -33,14 +35,18 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
     List<Employee> findByHireDateBetween(LocalDate startDate, LocalDate endDate);
 
     //Display all employees where salaries greater and equal to '' in order
-    List<Employee> findBySalaryIsGreaterThanEqualOOrderBySalaryDesc(Integer salary);
+    List<Employee> findBySalaryIsGreaterThanEqualOrderBySalaryDesc(Integer salary);
 
     //Display top 3 unique employees that is making less
-    List<Employee> findDistinctTop3BySalaryLessThen(Integer salary);
-
     //Display all employees that do not have email address
     List<Employee> findByEmailIsNull();
 
-    @Query("SELECT e FROM Employee e WHERE e.email='amcne@google.es'")
-    Employee getEmployeeDetail();
+    @Query("SELECT e FROM Employee e WHERE e.email=?1")
+    Employee getEmployeeDetail(String email);
+
+    @Query("SELECT e.salary FROM Employee e WHERE e.email=?1")
+    Integer getEmployeeSalary(String email);
+
+    @Query("SELECT e FROM Employee e WHERE e.email=?1 and e.salary=?2")
+    Employee getEmployeeDetail(String email, int salary);
 }
