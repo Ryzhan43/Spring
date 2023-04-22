@@ -1,8 +1,14 @@
 package com.example.repository;
 
 import com.example.entity.Employee;
+import jakarta.annotation.security.PermitAll;
+import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
+import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;
@@ -74,8 +80,31 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
     @Query("SELECT e from Employee e ORDER BY e.salary")
     List<Employee> AllEmployeesOrderedByName();
 
+    @Query(value = "select * FROM employees WHERE salary ?1", nativeQuery = true)
+    List<Employee> readEmployeeDetailsBySalary(int salary);
+
+    @Query("SELECT e FROM Employee e WHERE e.salary = :salary ")
+    List<Employee> getEmployeeSalary(@Param("salary") int salary);
 
 
 
-    //
+    @Modifying
+    @Transactional
+    @Query("UPDATE Employee e SET e.email ='admin@email.com' WHERE e.id=:id")
+    void updateEmployeeNativeJPQL(@Param("id") int id);
+
+
+    @Modifying
+    @Transactional
+    @Query(value = "UPDATE Employee e SET e.email ='admin@email.com' WHERE e.id=:id", nativeQuery = true)
+    void updateEmployeeNativeQuery(@Param("id") int id);
+
+
+
+
+
+
+
+
+
 }
