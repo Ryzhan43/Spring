@@ -54,8 +54,12 @@ public class DataGeneration implements CommandLineRunner {
         courseRepository.findByCategory("Spring").forEach(System.out::println);
         courseRepository.findByCategory("Spring").forEach(System.out::println);
         System.out.println(courseRepository.existsByName("JavaScript for all"));
+        courseRepository.findByNameStartingWith("Scalable").forEach(System.out::println);
+        courseRepository.streamAllByCategory("Java").forEach(System.out::println);
 
         System.out.println("=========================== COURSE END  ===================");
+
+
 
     }
 }
