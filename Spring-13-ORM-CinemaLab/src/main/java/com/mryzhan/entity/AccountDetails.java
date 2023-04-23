@@ -5,6 +5,7 @@ import com.mryzhan.enums.UserRole;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Entity
 @Data
@@ -22,7 +23,5 @@ public class AccountDetails extends BaseEntity {
     @Enumerated(EnumType.STRING)
     public UserRole role = UserRole.USER;
 
-    @OneToOne()
-    private UserAccount userAccount;
 
 }

@@ -3,7 +3,7 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.45">
     <root id="1">
       <DateStyle>ymd</DateStyle>
-      <IntrospectionStateNumber>4443</IntrospectionStateNumber>
+      <IntrospectionStateNumber>6953</IntrospectionStateNumber>
       <ServerVersion>15.2</ServerVersion>
       <StartupTime>1681338810</StartupTime>
       <TimeZones>true ACDT
@@ -802,7 +802,7 @@ false Zulu
 13183||10|C|G
 13183||-9223372036854775808|U|G
 13183||10|U|G</Grants>
-      <IntrospectionStateNumber>4443</IntrospectionStateNumber>
+      <IntrospectionStateNumber>6953</IntrospectionStateNumber>
       <ObjectId>5</ObjectId>
       <OwnerName>postgres</OwnerName>
     </database>
@@ -4229,10 +4229,735 @@ false Zulu
     <schema id="262" parent="2" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>4443</IntrospectionStateNumber>
+      <IntrospectionStateNumber>6953</IntrospectionStateNumber>
       <ObjectId>2200</ObjectId>
       <StateNumber>518</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
     </schema>
+    <sequence id="263" parent="262" name="account_details_id_seq">
+      <DasType>bigint|0s</DasType>
+      <ObjectId>40778</ObjectId>
+      <StateNumber>6933</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <sequence id="264" parent="262" name="cinema_id_seq">
+      <DasType>bigint|0s</DasType>
+      <ObjectId>40787</ObjectId>
+      <StateNumber>6934</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <sequence id="265" parent="262" name="genre_id_seq">
+      <DasType>bigint|0s</DasType>
+      <ObjectId>40796</ObjectId>
+      <StateNumber>6935</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <sequence id="266" parent="262" name="location_id_seq">
+      <DasType>bigint|0s</DasType>
+      <ObjectId>40803</ObjectId>
+      <StateNumber>6936</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <sequence id="267" parent="262" name="movie_cinema_id_seq">
+      <DasType>bigint|0s</DasType>
+      <ObjectId>40824</ObjectId>
+      <StateNumber>6939</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <sequence id="268" parent="262" name="movie_id_seq">
+      <DasType>bigint|0s</DasType>
+      <ObjectId>40812</ObjectId>
+      <StateNumber>6937</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <sequence id="269" parent="262" name="ticket_id_seq">
+      <DasType>bigint|0s</DasType>
+      <ObjectId>40831</ObjectId>
+      <StateNumber>6940</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <sequence id="270" parent="262" name="user_account_id_seq">
+      <DasType>bigint|0s</DasType>
+      <ObjectId>40838</ObjectId>
+      <StateNumber>6941</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <table id="271" parent="262" name="account_details">
+      <ObjectId>40779</ObjectId>
+      <StateNumber>6949</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <table id="272" parent="262" name="cinema">
+      <ObjectId>40788</ObjectId>
+      <StateNumber>6942</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <table id="273" parent="262" name="flyway_schema_history">
+      <ObjectId>40887</ObjectId>
+      <StateNumber>6950</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <table id="274" parent="262" name="genre">
+      <ObjectId>40797</ObjectId>
+      <StateNumber>6943</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <table id="275" parent="262" name="location">
+      <ObjectId>40804</ObjectId>
+      <StateNumber>6942</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <table id="276" parent="262" name="movie">
+      <ObjectId>40813</ObjectId>
+      <StateNumber>6944</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <table id="277" parent="262" name="movie_cinema">
+      <ObjectId>40825</ObjectId>
+      <StateNumber>6945</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <table id="278" parent="262" name="movie_genre_rel">
+      <ObjectId>40821</ObjectId>
+      <StateNumber>6943</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <table id="279" parent="262" name="ticket">
+      <ObjectId>40832</ObjectId>
+      <StateNumber>6947</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <table id="280" parent="262" name="user_account">
+      <ObjectId>40839</ObjectId>
+      <StateNumber>6948</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <column id="281" parent="271" name="id">
+      <DasType>bigint|0s</DasType>
+      <DefaultExpression>nextval(&apos;account_details_id_seq&apos;::regclass)</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>6933</StateNumber>
+      <SequenceId>40778</SequenceId>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="282" parent="271" name="address">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>2</Position>
+      <StateNumber>6933</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="283" parent="271" name="age">
+      <DasType>integer|0s</DasType>
+      <Position>3</Position>
+      <StateNumber>6933</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="284" parent="271" name="city">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>4</Position>
+      <StateNumber>6933</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="285" parent="271" name="country">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>5</Position>
+      <StateNumber>6933</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="286" parent="271" name="name">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>6</Position>
+      <StateNumber>6933</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="287" parent="271" name="postal_code">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>7</Position>
+      <StateNumber>6933</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="288" parent="271" name="role">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>8</Position>
+      <StateNumber>6933</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="289" parent="271" name="state">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>9</Position>
+      <StateNumber>6933</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="290" parent="271" name="account_details_pkey">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>40785</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>6933</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="291" parent="271" name="account_details_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>40786</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>6933</StateNumber>
+      <UnderlyingIndexId>40785</UnderlyingIndexId>
+    </key>
+    <column id="292" parent="272" name="id">
+      <DasType>bigint|0s</DasType>
+      <DefaultExpression>nextval(&apos;cinema_id_seq&apos;::regclass)</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>6934</StateNumber>
+      <SequenceId>40787</SequenceId>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="293" parent="272" name="name">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>2</Position>
+      <StateNumber>6934</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="294" parent="272" name="sponsored_name">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>3</Position>
+      <StateNumber>6934</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="295" parent="272" name="location_id">
+      <DasType>bigint|0s</DasType>
+      <Position>4</Position>
+      <StateNumber>6934</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <foreign-key id="296" parent="272" name="fk8s0buef0qbajq608344o3mmvl">
+      <ColNames>location_id</ColNames>
+      <ObjectId>40847</ObjectId>
+      <RefColNames>id</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <StateNumber>6942</StateNumber>
+      <RefTableId>40804</RefTableId>
+      <RefTableName>location</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <index id="297" parent="272" name="cinema_pkey">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>40794</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>6934</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="298" parent="272" name="cinema_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>40795</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>6934</StateNumber>
+      <UnderlyingIndexId>40794</UnderlyingIndexId>
+    </key>
+    <column id="299" parent="273" name="installed_rank">
+      <DasType>integer|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>6950</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="300" parent="273" name="version">
+      <DasType>varchar(50)|0s</DasType>
+      <Position>2</Position>
+      <StateNumber>6950</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="301" parent="273" name="description">
+      <DasType>varchar(200)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StateNumber>6950</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="302" parent="273" name="type">
+      <DasType>varchar(20)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StateNumber>6950</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="303" parent="273" name="script">
+      <DasType>varchar(1000)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+      <StateNumber>6950</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="304" parent="273" name="checksum">
+      <DasType>integer|0s</DasType>
+      <Position>6</Position>
+      <StateNumber>6950</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="305" parent="273" name="installed_by">
+      <DasType>varchar(100)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+      <StateNumber>6950</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="306" parent="273" name="installed_on">
+      <DasType>timestamp|0s</DasType>
+      <DefaultExpression>now()</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>8</Position>
+      <StateNumber>6950</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="307" parent="273" name="execution_time">
+      <DasType>integer|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>9</Position>
+      <StateNumber>6950</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="308" parent="273" name="success">
+      <DasType>boolean|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>10</Position>
+      <StateNumber>6950</StateNumber>
+      <TypeId>16</TypeId>
+    </column>
+    <index id="309" parent="273" name="flyway_schema_history_pk">
+      <ColNames>installed_rank</ColNames>
+      <ObjectId>40893</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>6950</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <index id="310" parent="273" name="flyway_schema_history_s_idx">
+      <ColNames>success</ColNames>
+      <ObjectId>40895</ObjectId>
+      <StateNumber>6950</StateNumber>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="311" parent="273" name="flyway_schema_history_pk">
+      <ObjectId>40894</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>6950</StateNumber>
+      <UnderlyingIndexId>40893</UnderlyingIndexId>
+    </key>
+    <column id="312" parent="274" name="id">
+      <DasType>bigint|0s</DasType>
+      <DefaultExpression>nextval(&apos;genre_id_seq&apos;::regclass)</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>6935</StateNumber>
+      <SequenceId>40796</SequenceId>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="313" parent="274" name="name">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>2</Position>
+      <StateNumber>6935</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="314" parent="274" name="genre_pkey">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>40801</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>6935</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="315" parent="274" name="genre_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>40802</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>6935</StateNumber>
+      <UnderlyingIndexId>40801</UnderlyingIndexId>
+    </key>
+    <column id="316" parent="275" name="id">
+      <DasType>bigint|0s</DasType>
+      <DefaultExpression>nextval(&apos;location_id_seq&apos;::regclass)</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>6936</StateNumber>
+      <SequenceId>40803</SequenceId>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="317" parent="275" name="address">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>2</Position>
+      <StateNumber>6936</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="318" parent="275" name="city">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>3</Position>
+      <StateNumber>6936</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="319" parent="275" name="country">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>4</Position>
+      <StateNumber>6936</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="320" parent="275" name="latitude">
+      <DasType>numeric(38,2 digit)|0s</DasType>
+      <Position>5</Position>
+      <StateNumber>6936</StateNumber>
+      <TypeId>1700</TypeId>
+    </column>
+    <column id="321" parent="275" name="longitude">
+      <DasType>numeric(38,2 digit)|0s</DasType>
+      <Position>6</Position>
+      <StateNumber>6936</StateNumber>
+      <TypeId>1700</TypeId>
+    </column>
+    <column id="322" parent="275" name="name">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>7</Position>
+      <StateNumber>6936</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="323" parent="275" name="postal_code">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>8</Position>
+      <StateNumber>6936</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="324" parent="275" name="state">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>9</Position>
+      <StateNumber>6936</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="325" parent="275" name="location_pkey">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>40810</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>6936</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="326" parent="275" name="location_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>40811</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>6936</StateNumber>
+      <UnderlyingIndexId>40810</UnderlyingIndexId>
+    </key>
+    <column id="327" parent="276" name="id">
+      <DasType>bigint|0s</DasType>
+      <DefaultExpression>nextval(&apos;movie_id_seq&apos;::regclass)</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>6937</StateNumber>
+      <SequenceId>40812</SequenceId>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="328" parent="276" name="duration">
+      <DasType>bigint|0s</DasType>
+      <Position>2</Position>
+      <StateNumber>6937</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="329" parent="276" name="name">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>3</Position>
+      <StateNumber>6937</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="330" parent="276" name="price">
+      <DasType>bigint|0s</DasType>
+      <Position>4</Position>
+      <StateNumber>6937</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="331" parent="276" name="release_date">
+      <DasType>date|0s</DasType>
+      <Position>5</Position>
+      <StateNumber>6937</StateNumber>
+      <TypeId>1082</TypeId>
+    </column>
+    <column id="332" parent="276" name="state">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>6</Position>
+      <StateNumber>6937</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="333" parent="276" name="summary">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>7</Position>
+      <StateNumber>6937</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="334" parent="276" name="type">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>8</Position>
+      <StateNumber>6937</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="335" parent="276" name="movie_pkey">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>40819</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>6937</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="336" parent="276" name="movie_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>40820</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>6937</StateNumber>
+      <UnderlyingIndexId>40819</UnderlyingIndexId>
+    </key>
+    <column id="337" parent="277" name="id">
+      <DasType>bigint|0s</DasType>
+      <DefaultExpression>nextval(&apos;movie_cinema_id_seq&apos;::regclass)</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>6939</StateNumber>
+      <SequenceId>40824</SequenceId>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="338" parent="277" name="date_time">
+      <DasType>timestamp|0s</DasType>
+      <Position>2</Position>
+      <StateNumber>6939</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="339" parent="277" name="cinema_id">
+      <DasType>bigint|0s</DasType>
+      <Position>3</Position>
+      <StateNumber>6939</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="340" parent="277" name="movie_id">
+      <DasType>bigint|0s</DasType>
+      <Position>4</Position>
+      <StateNumber>6939</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <foreign-key id="341" parent="277" name="fk3bn2ho0qwu0c7tqfmxj8fuygn">
+      <ColNames>cinema_id</ColNames>
+      <ObjectId>40862</ObjectId>
+      <RefColNames>id</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <StateNumber>6945</StateNumber>
+      <RefTableId>40788</RefTableId>
+      <RefTableName>cinema</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <foreign-key id="342" parent="277" name="fk2trmgwjpvxxd4q7kcupa6m1vu">
+      <ColNames>movie_id</ColNames>
+      <ObjectId>40867</ObjectId>
+      <RefColNames>id</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <StateNumber>6946</StateNumber>
+      <RefTableId>40813</RefTableId>
+      <RefTableName>movie</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <index id="343" parent="277" name="movie_cinema_pkey">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>40829</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>6939</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="344" parent="277" name="movie_cinema_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>40830</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>6939</StateNumber>
+      <UnderlyingIndexId>40829</UnderlyingIndexId>
+    </key>
+    <column id="345" parent="278" name="movie_id">
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>6938</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="346" parent="278" name="genre_id">
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StateNumber>6938</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <foreign-key id="347" parent="278" name="fk7nhifftq0au66clnpt18bc9ut">
+      <ColNames>movie_id</ColNames>
+      <ObjectId>40857</ObjectId>
+      <RefColNames>id</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <StateNumber>6944</StateNumber>
+      <RefTableId>40813</RefTableId>
+      <RefTableName>movie</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <foreign-key id="348" parent="278" name="fkj6inrcrjt89pje7q4wkc8cvm1">
+      <ColNames>genre_id</ColNames>
+      <ObjectId>40852</ObjectId>
+      <RefColNames>id</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <StateNumber>6943</StateNumber>
+      <RefTableId>40797</RefTableId>
+      <RefTableName>genre</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <column id="349" parent="279" name="id">
+      <DasType>bigint|0s</DasType>
+      <DefaultExpression>nextval(&apos;ticket_id_seq&apos;::regclass)</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>6940</StateNumber>
+      <SequenceId>40831</SequenceId>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="350" parent="279" name="date_time">
+      <DasType>timestamp|0s</DasType>
+      <Position>2</Position>
+      <StateNumber>6940</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="351" parent="279" name="row_number">
+      <DasType>integer|0s</DasType>
+      <Position>3</Position>
+      <StateNumber>6940</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="352" parent="279" name="seat_number">
+      <DasType>integer|0s</DasType>
+      <Position>4</Position>
+      <StateNumber>6940</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="353" parent="279" name="movie_cinema_id">
+      <DasType>bigint|0s</DasType>
+      <Position>5</Position>
+      <StateNumber>6940</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="354" parent="279" name="user_account_id">
+      <DasType>bigint|0s</DasType>
+      <Position>6</Position>
+      <StateNumber>6940</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <foreign-key id="355" parent="279" name="fknsvmk94qaru0s4ojnbpn6annb">
+      <ColNames>movie_cinema_id</ColNames>
+      <ObjectId>40872</ObjectId>
+      <RefColNames>id</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <StateNumber>6947</StateNumber>
+      <RefTableId>40825</RefTableId>
+      <RefTableName>movie_cinema</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <foreign-key id="356" parent="279" name="fk7tjg2ere9k3sy94bt7c8a2jbt">
+      <ColNames>user_account_id</ColNames>
+      <ObjectId>40877</ObjectId>
+      <RefColNames>id</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <StateNumber>6948</StateNumber>
+      <RefTableId>40839</RefTableId>
+      <RefTableName>user_account</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <index id="357" parent="279" name="ticket_pkey">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>40836</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>6940</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="358" parent="279" name="ticket_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>40837</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>6940</StateNumber>
+      <UnderlyingIndexId>40836</UnderlyingIndexId>
+    </key>
+    <column id="359" parent="280" name="id">
+      <DasType>bigint|0s</DasType>
+      <DefaultExpression>nextval(&apos;user_account_id_seq&apos;::regclass)</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>6941</StateNumber>
+      <SequenceId>40838</SequenceId>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="360" parent="280" name="email">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>2</Position>
+      <StateNumber>6941</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="361" parent="280" name="password">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>3</Position>
+      <StateNumber>6941</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="362" parent="280" name="username">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>4</Position>
+      <StateNumber>6941</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="363" parent="280" name="account_details_id">
+      <DasType>bigint|0s</DasType>
+      <Position>5</Position>
+      <StateNumber>6941</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <foreign-key id="364" parent="280" name="fksukm6xaj1w3rd96a82j1sy6dq">
+      <ColNames>account_details_id</ColNames>
+      <ObjectId>40882</ObjectId>
+      <RefColNames>id</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <StateNumber>6949</StateNumber>
+      <RefTableId>40779</RefTableId>
+      <RefTableName>account_details</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <index id="365" parent="280" name="user_account_pkey">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>40845</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>6941</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="366" parent="280" name="user_account_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>40846</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>6941</StateNumber>
+      <UnderlyingIndexId>40845</UnderlyingIndexId>
+    </key>
   </database-model>
 </dataSource>
