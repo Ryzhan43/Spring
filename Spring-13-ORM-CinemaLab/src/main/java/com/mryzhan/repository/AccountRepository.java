@@ -40,14 +40,21 @@ public interface AccountRepository extends JpaRepository<UserAccount, Long> {
     List<UserAccount> readAllAccounts();
 
     //Write a JPQL query to list all admin accounts
-    @Query("SELECT u FROM UserAccount u WHERE u.accountDetails.role?1")
-    List<UserAccount> readAllAdminAccounts(@Param("role") UserRole userRole);
+    @Query("SELECT u FROM UserAccount u WHERE u.accountDetails.role In (com.mryzhan.enums.UserRole.ADMIN)")
+    List<UserAccount> readAllAdminAccounts();
 
     //Write a JPQL query to sort all accounts with age
+    @Query("SELECT u FROM UserAccount u ORDER BY u.accountDetails.age DESC")
+    List<UserAccount> readAllAccountsSortedByAge();
+
 
     // ------------------- Native QUERIES ------------------- //
 
     //Write a native query to read all accounts with an age lower than a specific value
+    @Query(value = "select * from user_account u1_0 join account_details a1_0 on a1_0.id=u1_0.account_details_id where a1_0.age<47", nativeQuery = true)
+    //@Query("SELECT u FROM UserAccount u WHERE u.accountDetails.age < ?1")
+    List<UserAccount> readAllByAgeLessThanNative(Integer age);
+
 
     //Write a native query to read all accounts that a specific value can be containable in the name, address, country, state city
 

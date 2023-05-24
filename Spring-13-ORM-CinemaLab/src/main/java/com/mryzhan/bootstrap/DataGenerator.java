@@ -21,9 +21,13 @@ public class DataGenerator implements CommandLineRunner {
         accountRepository.findAllByAccountDetails_AgeLessThanEqual(34).forEach(System.out::println);
         accountRepository.findAllByOrderByAccountDetails_Age().forEach(a-> System.out.println(a.getAccountDetails().getAge()));
         accountRepository.readAllAccounts().forEach(System.out::println);
+        accountRepository.readAllAdminAccounts().forEach(System.out::println);
+        accountRepository.readAllAccountsSortedByAge().forEach(a-> System.out.println(a.getAccountDetails().getAge()));
 
         System.out.println("==========================");
-        accountRepository.readAllAdminAccounts(UserRole.ADMIN);
+
+        accountRepository.readAllByAgeLessThanNative(47).forEach(System.out::println);
+
 
 
 
