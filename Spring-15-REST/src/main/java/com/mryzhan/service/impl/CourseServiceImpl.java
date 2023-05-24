@@ -1,10 +1,10 @@
-package com.cydeo.service.impl;
+package com.mryzhan.service.impl;
 
-import com.cydeo.dto.CourseDTO;
-import com.cydeo.entity.Course;
-import com.cydeo.repository.CourseRepository;
-import com.cydeo.service.CourseService;
-import com.cydeo.util.MapperUtil;
+import com.mryzhan.dto.CourseDTO;
+import com.mryzhan.entity.Course;
+import com.mryzhan.repository.CourseRepository;
+import com.mryzhan.service.CourseService;
+import com.mryzhan.util.MapperUtil;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

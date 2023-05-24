@@ -1,4 +1,4 @@
-package com.cydeo.entity;
+package com.mryzhan.entity;
 
 
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package com.cydeo.util;
+package com.mryzhan.util;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;

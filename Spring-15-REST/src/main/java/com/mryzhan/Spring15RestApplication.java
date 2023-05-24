@@ -1,4 +1,4 @@
-package com.cydeo;
+package com.mryzhan;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;

@@ -1,6 +1,6 @@
-package com.cydeo.service;
+package com.mryzhan.service;
 
-import com.cydeo.dto.CourseDTO;
+import com.mryzhan.dto.CourseDTO;
 
 import java.util.List;
 

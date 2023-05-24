@@ -3,15 +3,7 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.45">
     <root id="1">
       <DateStyle>ymd</DateStyle>
-      <Grants>1||-9223372036854775808|c|G
-1||10|c|G
-1||10|C|G
-1||10|T|G
-4||-9223372036854775808|c|G
-4||10|c|G
-4||10|C|G
-4||10|T|G</Grants>
-      <IntrospectionStateNumber>12444</IntrospectionStateNumber>
+      <IntrospectionStateNumber>12476</IntrospectionStateNumber>
       <ServerVersion>15.2</ServerVersion>
       <StartupTime>1684634589</StartupTime>
       <TimeZones>true ACDT
@@ -810,7 +802,7 @@ false Zulu
 13183||10|C|G
 13183||-9223372036854775808|U|G
 13183||10|U|G</Grants>
-      <IntrospectionStateNumber>12444</IntrospectionStateNumber>
+      <IntrospectionStateNumber>12476</IntrospectionStateNumber>
       <ObjectId>5</ObjectId>
       <OwnerName>postgres</OwnerName>
     </database>
@@ -4241,15 +4233,15 @@ false Zulu
     <schema id="263" parent="2" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>12444</IntrospectionStateNumber>
+      <IntrospectionStateNumber>12476</IntrospectionStateNumber>
       <ObjectId>2200</ObjectId>
       <StateNumber>518</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
     </schema>
     <sequence id="264" parent="263" name="courses_id_seq">
       <DasType>bigint|0s</DasType>
-      <ObjectId>59747</ObjectId>
-      <StateNumber>12438</StateNumber>
+      <ObjectId>59784</ObjectId>
+      <StateNumber>12469</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <sequence id="265" parent="263" name="employees_id_seq">
@@ -4259,8 +4251,8 @@ false Zulu
       <OwnerName>postgres</OwnerName>
     </sequence>
     <table id="266" parent="263" name="courses">
-      <ObjectId>59748</ObjectId>
-      <StateNumber>12438</StateNumber>
+      <ObjectId>59785</ObjectId>
+      <StateNumber>12469</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
@@ -4287,49 +4279,49 @@ false Zulu
       <DefaultExpression>nextval(&apos;courses_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>12438</StateNumber>
-      <SequenceId>59747</SequenceId>
+      <StateNumber>12469</StateNumber>
+      <SequenceId>59784</SequenceId>
       <TypeId>20</TypeId>
     </column>
     <column id="271" parent="266" name="category">
       <DasType>varchar(255)|0s</DasType>
       <Position>2</Position>
-      <StateNumber>12438</StateNumber>
+      <StateNumber>12469</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="272" parent="266" name="description">
       <DasType>varchar(255)|0s</DasType>
       <Position>3</Position>
-      <StateNumber>12438</StateNumber>
+      <StateNumber>12469</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="273" parent="266" name="name">
       <DasType>varchar(255)|0s</DasType>
       <Position>4</Position>
-      <StateNumber>12438</StateNumber>
+      <StateNumber>12469</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="274" parent="266" name="rating">
       <DasType>integer|0s</DasType>
       <Position>5</Position>
-      <StateNumber>12438</StateNumber>
+      <StateNumber>12469</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <index id="275" parent="266" name="courses_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>59754</ObjectId>
+      <ObjectId>59791</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>12438</StateNumber>
+      <StateNumber>12469</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
     <key id="276" parent="266" name="courses_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>59755</ObjectId>
+      <ObjectId>59792</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>12438</StateNumber>
-      <UnderlyingIndexId>59754</UnderlyingIndexId>
+      <StateNumber>12469</StateNumber>
+      <UnderlyingIndexId>59791</UnderlyingIndexId>
     </key>
     <column id="277" parent="267" name="department">
       <DasType>varchar(255)|0s</DasType>
