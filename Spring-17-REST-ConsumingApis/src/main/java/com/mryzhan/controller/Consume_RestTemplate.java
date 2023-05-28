@@ -1,7 +1,6 @@
 package com.mryzhan.controller;
 
 import com.mryzhan.dto.User;
-import jakarta.persistence.criteria.CriteriaBuilder;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

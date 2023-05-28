@@ -1,4 +1,4 @@
-package com.mryzhan.entity;
+package com.mryzhan.dto;
 
 
 import lombok.Getter;
