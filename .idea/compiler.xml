@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Spring-17-REST-ConsumingApis" />
         <module name="Spring-02-Core-Wiring" />
+        <module name="Spring-18-REST-OpenApi3" />
         <module name="Spring-04-Abstraction" />
         <module name="Spring-01-Core-IoC" />
         <module name="Spring-03-Core-DI" />
@@ -57,6 +58,7 @@
       <module name="Spring-15-REST" options="-parameters" />
       <module name="Spring-16-REST-Jackson" options="-parameters" />
       <module name="Spring-17-REST-ConsumingApis" options="-parameters" />
+      <module name="Spring-18-REST-OpenApi3" options="-parameters" />
       <module name="Spring-Core-Review" options="-parameters" />
       <module name="spring-review-project" options="-parameters" />
     </option>
