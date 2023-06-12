@@ -16,7 +16,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1")
 @Tag(name = "User", description = "User CRUD Operations")
-public class UserController {
+public class   UserController {
 
     private final UserRepository userRepository;
 
