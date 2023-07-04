@@ -3,9 +3,17 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.45">
     <root id="1">
       <DateStyle>ymd</DateStyle>
-      <IntrospectionStateNumber>13947</IntrospectionStateNumber>
+      <Grants>1||-9223372036854775808|c|G
+1||10|c|G
+1||10|C|G
+1||10|T|G
+4||-9223372036854775808|c|G
+4||10|c|G
+4||10|C|G
+4||10|T|G</Grants>
+      <IntrospectionStateNumber>15602</IntrospectionStateNumber>
       <ServerVersion>15.2</ServerVersion>
-      <StartupTime>1686598267</StartupTime>
+      <StartupTime>1687699268</StartupTime>
       <TimeZones>true ACDT
 true ACSST
 false ACST
@@ -806,7 +814,7 @@ false Zulu
 13183||10|C|G
 13183||-9223372036854775808|U|G
 13183||10|U|G</Grants>
-      <IntrospectionStateNumber>13947</IntrospectionStateNumber>
+      <IntrospectionStateNumber>15602</IntrospectionStateNumber>
       <ObjectId>5</ObjectId>
       <OwnerName>postgres</OwnerName>
     </database>
@@ -4237,139 +4245,71 @@ false Zulu
     <schema id="264" parent="3" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>13947</IntrospectionStateNumber>
+      <IntrospectionStateNumber>15602</IntrospectionStateNumber>
       <ObjectId>2200</ObjectId>
       <StateNumber>518</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
     </schema>
-    <sequence id="265" parent="264" name="licenses_license_id_seq">
+    <sequence id="265" parent="264" name="courses_id_seq">
       <DasType>bigint|0s</DasType>
-      <ObjectId>79036</ObjectId>
-      <StateNumber>13943</StateNumber>
+      <ObjectId>89993</ObjectId>
+      <StateNumber>15595</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
-    <sequence id="266" parent="264" name="organizations_organization_id_seq">
-      <DasType>bigint|0s</DasType>
-      <ObjectId>79027</ObjectId>
-      <StateNumber>13942</StateNumber>
-      <OwnerName>postgres</OwnerName>
-    </sequence>
-    <table id="267" parent="264" name="licenses">
-      <ObjectId>79037</ObjectId>
-      <StateNumber>13943</StateNumber>
+    <table id="266" parent="264" name="courses">
+      <ObjectId>89994</ObjectId>
+      <StateNumber>15595</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="268" parent="264" name="organizations">
-      <ObjectId>79028</ObjectId>
-      <StateNumber>13942</StateNumber>
-      <AccessMethodId>2</AccessMethodId>
-      <OwnerName>postgres</OwnerName>
-    </table>
-    <column id="269" parent="267" name="license_id">
+    <column id="267" parent="266" name="id">
       <DasType>bigint|0s</DasType>
-      <DefaultExpression>nextval(&apos;licenses_license_id_seq&apos;::regclass)</DefaultExpression>
+      <DefaultExpression>nextval(&apos;courses_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>13943</StateNumber>
-      <SequenceId>79036</SequenceId>
+      <StateNumber>15595</StateNumber>
+      <SequenceId>89993</SequenceId>
       <TypeId>20</TypeId>
     </column>
-    <column id="270" parent="267" name="description">
+    <column id="268" parent="266" name="category">
       <DasType>varchar(255)|0s</DasType>
       <Position>2</Position>
-      <StateNumber>13943</StateNumber>
+      <StateNumber>15595</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="271" parent="267" name="license_type">
+    <column id="269" parent="266" name="description">
       <DasType>varchar(255)|0s</DasType>
-      <NotNull>1</NotNull>
       <Position>3</Position>
-      <StateNumber>13943</StateNumber>
+      <StateNumber>15595</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="272" parent="267" name="organization_id">
+    <column id="270" parent="266" name="name">
       <DasType>varchar(255)|0s</DasType>
-      <NotNull>1</NotNull>
       <Position>4</Position>
-      <StateNumber>13943</StateNumber>
+      <StateNumber>15595</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="273" parent="267" name="product_name">
-      <DasType>varchar(255)|0s</DasType>
-      <NotNull>1</NotNull>
+    <column id="271" parent="266" name="rating">
+      <DasType>integer|0s</DasType>
       <Position>5</Position>
-      <StateNumber>13943</StateNumber>
-      <TypeId>1043</TypeId>
+      <StateNumber>15595</StateNumber>
+      <TypeId>23</TypeId>
     </column>
-    <index id="274" parent="267" name="licenses_pkey">
-      <ColNames>license_id</ColNames>
+    <index id="272" parent="266" name="courses_pkey">
+      <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>79043</ObjectId>
+      <ObjectId>90000</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>13943</StateNumber>
+      <StateNumber>15595</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="275" parent="267" name="licenses_pkey">
+    <key id="273" parent="266" name="courses_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>79044</ObjectId>
+      <ObjectId>90001</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>13943</StateNumber>
-      <UnderlyingIndexId>79043</UnderlyingIndexId>
-    </key>
-    <column id="276" parent="268" name="organization_id">
-      <DasType>bigint|0s</DasType>
-      <DefaultExpression>nextval(&apos;organizations_organization_id_seq&apos;::regclass)</DefaultExpression>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StateNumber>13942</StateNumber>
-      <SequenceId>79027</SequenceId>
-      <TypeId>20</TypeId>
-    </column>
-    <column id="277" parent="268" name="contact_email">
-      <DasType>varchar(255)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-      <StateNumber>13942</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <column id="278" parent="268" name="contact_name">
-      <DasType>varchar(255)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-      <StateNumber>13942</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <column id="279" parent="268" name="contact_phone">
-      <DasType>varchar(255)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-      <StateNumber>13942</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <column id="280" parent="268" name="name">
-      <DasType>varchar(255)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>5</Position>
-      <StateNumber>13942</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <index id="281" parent="268" name="organizations_pkey">
-      <ColNames>organization_id</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>79034</ObjectId>
-      <Primary>1</Primary>
-      <StateNumber>13942</StateNumber>
-      <Unique>1</Unique>
-      <AccessMethodId>403</AccessMethodId>
-    </index>
-    <key id="282" parent="268" name="organizations_pkey">
-      <NameSurrogate>1</NameSurrogate>
-      <ObjectId>79035</ObjectId>
-      <Primary>1</Primary>
-      <StateNumber>13942</StateNumber>
-      <UnderlyingIndexId>79034</UnderlyingIndexId>
+      <StateNumber>15595</StateNumber>
+      <UnderlyingIndexId>90000</UnderlyingIndexId>
     </key>
   </database-model>
 </dataSource>

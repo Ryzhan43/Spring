@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Spring-21-UnitTesting-JUnit5" />
         <module name="Spring-17-REST-ConsumingApis" />
         <module name="Spring-02-Core-Wiring" />
         <module name="Spring-18-REST-OpenApi3" />
