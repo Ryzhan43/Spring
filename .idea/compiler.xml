@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Spring-21-UnitTesting-JUnit5" />
         <module name="Spring-22-UnitTesting-Mocking" />
+        <module name="Spring-23-UnitTesting-MockMvc" />
         <module name="Spring-03-Core-DI" />
         <module name="Spring-15-REST" />
         <module name="Spring-16-REST-Jackson" />
@@ -70,6 +71,7 @@
       <module name="Spring-20-AOP" options="-parameters" />
       <module name="Spring-22-UnitTesting-Mocking" options="-parameters" />
       <module name="Spring-22-UnitTesting-Mocking (1)" options="-parameters" />
+      <module name="Spring-23-UnitTesting-MockMvc" options="-parameters" />
       <module name="Spring-Core-Review" options="-parameters" />
       <module name="spring-review-project" options="-parameters" />
     </option>
