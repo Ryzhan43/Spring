@@ -32,6 +32,7 @@
         <module name="Spring-19-REST-Security-Keycloak-OrganizationsApp" />
         <module name="Spring-19-REST-Security-Keycloak-LicenseApp" />
         <module name="Spring-10-ORM-TableCreation" />
+        <module name="Spring-24-Docker" />
       </profile>
       <profile name="Gradle Imported" enabled="true">
         <outputRelativeToContentRoot value="true" />
@@ -72,6 +73,7 @@
       <module name="Spring-22-UnitTesting-Mocking" options="-parameters" />
       <module name="Spring-22-UnitTesting-Mocking (1)" options="-parameters" />
       <module name="Spring-23-UnitTesting-MockMvc" options="-parameters" />
+      <module name="Spring-24-Docker" options="-parameters" />
       <module name="Spring-Core-Review" options="-parameters" />
       <module name="spring-review-project" options="-parameters" />
     </option>
