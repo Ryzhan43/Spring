@@ -3,5 +3,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Spring-22-UnitTesting-Mocking" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../ticketing-orm" vcs="Git" />
   </component>
 </project>
